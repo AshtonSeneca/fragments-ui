@@ -4,12 +4,19 @@
   "version": "0.0.1",
   "description": "Fragments UI testing web app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel serve src/index.html --port 1234",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AshtonSeneca/fragments-ui.git"
   },
   "author": "Ashton Miguelle Mendoza",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "oidc-client-ts": "^3.3.0"
+  }
 }
