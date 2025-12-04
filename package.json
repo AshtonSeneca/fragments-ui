@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Fragments UI testing web app",
   "scripts": {
-    "start": "parcel serve src/index.html --port 1234",
+    "start": "parcel serve src/index.html --port 3000",
     "build": "parcel build src/index.html"
   },
   "repository": {

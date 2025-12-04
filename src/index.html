@@ -1,9 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>Fragments UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
+    <style>
+      .fragment-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+      }
+      .fragment-item p {
+        margin: 5px 0;
+      }
+      #result {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        max-height: 300px;
+        overflow: auto;
+      }
+    </style>
   </head>
   <body>
     <h1>Fragments UI</h1>
@@ -11,9 +31,41 @@
 
     <section hidden id="user">
       <h2>Hello <span class="username"></span>!</h2>
+
+      <!-- Fragments List Section -->
+      <h3>Your Fragments</h3>
+      <button id="refresh-fragments">Get All Fragments (with metadata)</button>
+      <div id="fragments-list">
+        <p>Click "Get All Fragments" to view your fragments...</p>
+      </div>
+
+      <hr style="margin: 30px 0;">
+
+      <!-- Create Fragment Form -->
+      <h3>Create New Fragment</h3>
+      <form id="create-form">
+        <label for="fragment-type">Fragment Type:</label>
+        <select id="fragment-type" required>
+          <option value="text/plain">Text (text/plain)</option>
+          <option value="text/markdown">Markdown (text/markdown)</option>
+          <option value="text/html">HTML (text/html)</option>
+          <option value="text/csv">CSV (text/csv)</option>
+          <option value="application/json">JSON (application/json)</option>
+        </select>
+
+        <label for="frag-input">Fragment Content:</label>
+        <textarea id="frag-input" rows="8" placeholder="Enter your fragment content here...&#10;&#10;For JSON: {&quot;key&quot;: &quot;value&quot;}&#10;For Markdown: # Heading&#10;For plain text: any text" required></textarea>
+
+        <button type="submit">Create Fragment</button>
+      </form>
+
+      <hr style="margin: 30px 0;">
+
+      <!-- Results Display -->
+      <h3>Operation Result</h3>
+      <pre id="result" style="white-space: pre-wrap;">Results will appear here...</pre>
     </section>
 
-    <!-- JS entry -->
     <script type="module" src="./app.js"></script>
   </body>
 </html>
